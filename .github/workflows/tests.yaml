@@ -1,0 +1,121 @@
+name: "first test"
+on:
+  push:
+jobs:
+  test:
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Check out repository 
+        uses: actions/checkout@v2
+      - name: Build apk flutter
+        uses: jddeep/Flutter-Runner@1.2.0
+      - name: Run a one-line script
+        run: ls
+        # with:
+        #     github-token: ${{ secrets.GITHUB_TOKEN }}
+        #     oprosso-token: d
+
+
+
+# Skip to content
+# Search or jump to…
+
+# Pull requests
+# Issues
+# Marketplace
+# Explore
+ 
+# @yaetiya 
+# stolenng
+# /
+# github-actions-sharing-data
+# 1
+# 00
+# Code
+# Issues
+# Pull requests
+# Actions
+# Projects
+# Wiki
+# Security
+# Insights
+# github-actions-sharing-data/.github/workflows/pull_request.yml
+# @stolenng
+# stolenng tipo
+# Latest commit 4bf3744 on 25 Jan
+#  History
+#  1 contributor
+# 72 lines (62 sloc)  1.44 KB
+  
+# on:
+#   push:
+#     branches: [main]
+
+
+# name: Cache Example
+
+# jobs:
+#   cache-build:
+#     name: Build - With Cache
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-node@v1
+#         with:
+#           node-version: 12
+#       - run: npm ci
+#       - run: npm run build
+#       - uses: actions/cache@v2
+#         id: restore-build
+#         with:
+#           path: ./*
+#           key: ${{ github.sha }}
+
+#   cache-use-build:
+#     name: Re-use Cache
+#     runs-on: ubuntu-latest
+#     needs: [cache-build]
+
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-node@v1
+#         with:
+#           node-version: 12
+#       - uses: actions/cache@v2
+#         id: restore-build
+#         with:
+#           path: ./*
+#           key: ${{ github.sha }}
+#       - run: ls .next
+
+#   artifact-build:
+#     name: Build - With Artifact
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-node@v1
+#         with:
+#           node-version: 12
+#       - run: npm ci
+#       - run: npm run build
+#       - uses: actions/upload-artifact@v2
+#         with:
+#           name: nextjs-build
+#           path: ./.next
+
+#   artifact-use-build:
+#     name: Re-use Artifact
+#     runs-on: ubuntu-latest
+#     needs: [artifact-build]
+
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-node@v1
+#         with:
+#           node-version: 12
+#       - uses: actions/download-artifact@v2
+#         with:
+#           name: nextjs-build
+#       - run: ls .
