@@ -5,8 +5,12 @@ jobs:
   test:
     runs-on: ubuntu-16.04
     steps:
-      - name: Build apk flutter
-        uses: jeanluc243/Flutter-Deployment@0.1
+      - name: Check out repository 
+        uses: actions/checkout@v2
+      - name: Install Flutter
+        uses: britannio/action-install-flutter@v1.0
+      - name: Build apk
+        run: flutter build apk
       - name: Run a one-line script
         run: ls
         # with:
